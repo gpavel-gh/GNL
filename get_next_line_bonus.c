@@ -6,11 +6,11 @@
 /*   By: gpavel <gpavel@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/17 10:20:58 by gpavel            #+#    #+#             */
-/*   Updated: 2020/10/27 10:58:15 by gpavel           ###   ########.fr       */
+/*   Updated: 2020/10/27 11:26:09 by gpavel           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "get_next_line_bonus.h"
 
 static int ft_upto_line(char **s, char **line, int fd, int n)
 {

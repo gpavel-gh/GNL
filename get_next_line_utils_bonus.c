@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line_utils.c                              :+:      :+:    :+:   */
+/*   get_next_line_utils_bonus.c                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gpavel <gpavel@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/17 10:20:20 by gpavel            #+#    #+#             */
-/*   Updated: 2020/08/25 11:25:18 by gpavel           ###   ########.fr       */
+/*   Updated: 2020/10/27 11:26:42 by gpavel           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "get_next_line.h"
+# include "get_next_line_bonus.h"
 
 int		ft_strlen(const char *str)
 {
