@@ -6,7 +6,7 @@
 /*   By: gpavel <gpavel@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/17 10:20:58 by gpavel            #+#    #+#             */
-/*   Updated: 2020/10/27 10:56:09 by gpavel           ###   ########.fr       */
+/*   Updated: 2020/10/27 11:43:16 by gpavel           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,12 +42,13 @@ static int ft_upto_line(char **s, char **line, int fd, int n)
 int get_next_line(int fd, char **line)
 {
 	static char		*str[256];
-	char			buffer[BUFFER_SIZE + 1];
+	char*			buffer;
 	char			*aux;
 	int				n;
 
 	if (fd < 0 || line == NULL || BUFFER_SIZE < 1)
 		return (-1);
+	buffer = (char *)malloc(BUFFER_SIZE + 1);
 	while ((n = read(fd, buffer, BUFFER_SIZE)) > 0)
 	{
 		buffer[n] = '\0';
@@ -63,6 +64,7 @@ int get_next_line(int fd, char **line)
 		if (ft_strchr(buffer, '\n'))
 			break;
 	}
+	free (buffer);
 	if (n < 0)
 		return (-1);
 	if ((n == 0) && (str[fd] == NULL || str[fd] == '\0'))
