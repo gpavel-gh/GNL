@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line_utils_bonus.c                        :+:      :+:    :+:   */
+/*   get_next_line_utils.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gpavel <gpavel@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/17 10:20:20 by gpavel            #+#    #+#             */
-/*   Updated: 2020/10/27 11:26:42 by gpavel           ###   ########.fr       */
+/*   Updated: 2020/10/30 11:11:17 by gpavel           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "get_next_line_bonus.h"
+#include "get_next_line.h"
 
 int		ft_strlen(const char *str)
 {
@@ -87,11 +87,10 @@ char	*ft_strchr(const char *str, int c)
 	return (0);
 }
 
-
 char	*ft_substr(char const *s, unsigned int start, int len)
 {
-	char			*subs;
-	int	i;
+	char	*subs;
+	int		i;
 
 	if ((unsigned int)ft_strlen((char *)s) < start)
 		return (ft_strdup(""));

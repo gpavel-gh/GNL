@@ -6,7 +6,7 @@
 /*   By: gpavel <gpavel@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/17 10:20:58 by gpavel            #+#    #+#             */
-/*   Updated: 2020/10/29 14:27:15 by gpavel           ###   ########.fr       */
+/*   Updated: 2020/10/30 11:14:05 by gpavel           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 char		*ft_fillstr(char *buffer, char *str, int n)
 {
-	char	*aux;	
+	char		*aux;
 
 	buffer[n] = '\0';
 	if (!str)
@@ -29,10 +29,10 @@ char		*ft_fillstr(char *buffer, char *str, int n)
 	return (str);
 }
 
-static int	ft_upto_line(char **s, char **line, int n)
+static int	ft_fill_line(char **s, char **line, int n)
 {
-	char	*aux;
-	int		len;
+	char		*aux;
+	int			len;
 
 	len = 0;
 	while (s[0][len] != '\n' && s[0][len] != '\0')
@@ -48,18 +48,19 @@ static int	ft_upto_line(char **s, char **line, int n)
 	else if ((*s)[len] == '\0')
 	{
 		*line = ft_strdup(*s);
-		free (*s);
+		free(*s);
 		*s = NULL;
 		if (n == 0)
 			return (0);
 	}
 	return (1);
 }
+
 int			get_next_line(int fd, char **line)
 {
-	static char		*str[256];
-	char*			buffer;
-	int				n;
+	static char	*str[256];
+	char		*buffer;
+	int			n;
 
 	if (fd < 0 || line == NULL || BUFFER_SIZE < 1)
 		return (-1);
@@ -69,15 +70,15 @@ int			get_next_line(int fd, char **line)
 	{
 		str[fd] = ft_fillstr(buffer, str[fd], n);
 		if (ft_strchr(buffer, '\n'))
-			break;
+			break ;
 	}
-	free (buffer);
+	free(buffer);
 	if (n < 0)
 		return (-1);
 	if ((n == 0) && (str[fd] == NULL || str[fd] == '\0'))
-		{
-			*line = ft_strdup("");
-			return (0);
-		}
-	return (ft_upto_line(&str[fd], line, n));
+	{
+		*line = ft_strdup("");
+		return (0);
+	}
+	return (ft_fill_line(&str[fd], line, n));
 }

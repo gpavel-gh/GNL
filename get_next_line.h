@@ -6,12 +6,12 @@
 /*   By: gpavel <gpavel@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/17 10:20:51 by gpavel            #+#    #+#             */
-/*   Updated: 2020/09/09 08:59:36 by gpavel           ###   ########.fr       */
+/*   Updated: 2020/10/30 11:17:54 by gpavel           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef get_next_line_H
-# define get_next_line_H
+#ifndef GET_NEXT_LINE_H
+# define GET_NEXT_LINE_H
 
 # include <stdio.h>
 # include <stdlib.h>
